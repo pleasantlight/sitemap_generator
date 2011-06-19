@@ -2,6 +2,9 @@ require 'sitemap_generator'
 
 module SitemapGenerator
 
+  include ActionView::Helpers::UrlHelper
+  include ActionController::UrlWriter
+  
   # Provide a class for evaluating blocks, making the URL helpers from the framework
   # and API methods available to it.
   class Interpreter
