@@ -23,6 +23,7 @@ module SitemapGenerator
     def initialize(opts={}, &block)
       opts.reverse_merge!(:link_set => SitemapGenerator::Sitemap)
       @linkset = opts.delete :link_set
+      puts "*** in initialize: opts = #{opts.inspect}"
       @linkset.send(:set_options, opts)
       eval(&block) if block_given?
     end
