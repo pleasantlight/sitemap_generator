@@ -24,7 +24,13 @@ module SitemapGenerator
       opts.reverse_merge!(:link_set => SitemapGenerator::Sitemap)
       @linkset = opts.delete :link_set
       puts "*** in initialize: opts = #{opts.inspect}"
-      @linkset.send(:set_options, opts)
+      opts.each do |opt|
+        case opt.key.downcase {
+        when "verbose"
+          @linkset.verbose = (opt.value.first.downcase == "t" ? true : false)
+        }
+      end
+      # @linkset.send(:set_options, opts)
       eval(&block) if block_given?
     end
 
