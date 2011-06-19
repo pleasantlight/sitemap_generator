@@ -236,6 +236,7 @@ module SitemapGenerator
     # both the sitemap and the sitemap index.
     def set_options(opts={})
       opts.each_pair do |key, value|
+        puts "Setting #{key}=#{value}..."
         send("#{key}=", value) unless key == "options"
       end
     end
