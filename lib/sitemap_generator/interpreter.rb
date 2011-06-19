@@ -25,10 +25,10 @@ module SitemapGenerator
       @linkset = opts.delete :link_set
       puts "*** in initialize: opts = #{opts.inspect}"
       opts.each do |opt|
-        case opt.key.downcase {
+        case opt.key.downcase 
         when "verbose"
           @linkset.verbose = (opt.value.first.downcase == "t" ? true : false)
-        }
+        end
       end
       # @linkset.send(:set_options, opts)
       eval(&block) if block_given?
