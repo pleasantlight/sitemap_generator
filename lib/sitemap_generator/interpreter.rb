@@ -25,8 +25,8 @@ module SitemapGenerator
       @linkset = opts.delete :link_set
       puts "*** in initialize: opts = #{opts.inspect}"
       opts.each_pair do |key, value|
-        case key.downcase 
-        when "verbose"
+        case key
+        when :verbose
           @linkset.verbose = value
         end
       end
