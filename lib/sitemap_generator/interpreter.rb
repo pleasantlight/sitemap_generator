@@ -27,7 +27,7 @@ module SitemapGenerator
       opts.each_pair do |key, value|
         case key.downcase 
         when "verbose"
-          @linkset.verbose = (value.first.downcase == "t" ? true : false)
+          @linkset.verbose = value
         end
       end
       # @linkset.send(:set_options, opts)
