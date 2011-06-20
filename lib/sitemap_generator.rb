@@ -20,7 +20,7 @@ module SitemapGenerator
   silence_warnings do
     VERSION = File.read(File.dirname(__FILE__) + "/../VERSION").strip
     MAX_SITEMAP_FILES    = 50_000        # max sitemap links per index file
-    MAX_SITEMAP_LINKS    = 50_000        # max links per sitemap
+    MAX_SITEMAP_LINKS    = 10_000        # max links per sitemap
     MAX_SITEMAP_IMAGES   = 1_000         # max images per url
     MAX_SITEMAP_FILESIZE = 10.megabytes  # bytes
 
